@@ -5,10 +5,24 @@ import java.util.*;
 
 public class TicTacToe {
 
-	public static void main(String[]args){
-		Window g = new Window();
-		g.setVisible(true);
-	}
+    public BoardGUI Start () {
+	BoardGUI board = new BoardGUI();
+	return board;
+    }
+
+    public void Run () {
+	board = Start();
+	
+    }
+
+    public static void main (String[]args) {
+
+	Window g = new Window();
+	g.setVisible(true);
+	
+    }
+
+    
 }
 
 //BoardGUI will have a fxn to already create the window to display the GUI
