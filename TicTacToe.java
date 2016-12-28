@@ -5,6 +5,19 @@ import java.util.*;
 
 public class TicTacToe {
 
+	private char[][] data;
+
+	public Board () {
+		data = new char[3][3];
+	}
+
+
+	/* This will be for the random grid. Will be implemented later
+    public Board (int size) {
+	data = new char[size][size];
+    }
+	*/
+
     public BoardGUI Start () {
 	BoardGUI board = new BoardGUI();
 	return board;
