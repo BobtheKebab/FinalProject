@@ -10,3 +10,5 @@ public class TicTacToe {
 		g.setVisible(true);
 	}
 }
+
+//BoardGUI will have a fxn to already create the window to display the GUI
