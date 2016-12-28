@@ -7,11 +7,6 @@ public class TicTacToe {
 
 	private char[][] data;
 
-	public Board () {
-		data = new char[3][3];
-	}
-
-
 	/* This will be for the random grid. Will be implemented later
     public Board (int size) {
 	data = new char[size][size];
@@ -19,19 +14,20 @@ public class TicTacToe {
 	*/
 
     public BoardGUI Start () {
+	data = new char[3][3];
 	BoardGUI board = new BoardGUI();
 	return board;
     }
 
     public void Run () {
 	board = Start();
+	board.setVisisble(true);
 	
     }
 
     public static void main (String[]args) {
 
-	Window g = new Window();
-	g.setVisible(true);
+        Run();
 	
     }
 
