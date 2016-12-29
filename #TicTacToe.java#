@@ -5,7 +5,7 @@ import java.util.*;
 
 public class TicTacToe {
 
-    private char[][] data;
+	private char[][] data;
 
 	/* This will be for the random grid. Will be implemented later
     public Board (int size) {
