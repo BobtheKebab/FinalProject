@@ -22,12 +22,14 @@ public class TicTacToe {
     // String X will be the starting object for now
     private String player = "X";
 
-    private void turn (){
+    private void changePlayer (){
     	if (player.equals ("X")){
     		player == "O";
     	}
     	else (player == "X";)
     }
+
+
 
 
 
