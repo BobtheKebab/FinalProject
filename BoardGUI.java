@@ -27,8 +27,8 @@ public class BoardGUI extends JFrame {
 
 	top = new JPanel(new GridLayout(3, 3));
 	bottom = new JPanel(new GridLayout(1, 3, 50, 0));
-	bottomLeft = new JPanel(new GridLayout(2, 1));
-	bottomRight = new JPanel(new GridLayout(2, 1));
+	bottomLeft = new JPanel(new GridLayout(2, 1, 0, 5));
+	bottomRight = new JPanel(new GridLayout(2, 1, 0, 5));
 
 	bottomLeft.add(player1);
 	bottomLeft.add(wins1);
@@ -38,6 +38,17 @@ public class BoardGUI extends JFrame {
 	bottom.add(bottomLeft);
 	bottom.add(whosTurn);
 	bottom.add(bottomRight);
+	
+	board = new JButton[3][3];
+	for (int row = 0; row < board.length; row++) {
+	    for (int col = 0; col < board[0].length; col++) {
+		JButton button = board[row][col];
+	        button = new JButton("");
+		button.setVisible(true);
+		//button.addActionListener(this);
+		top.add(button);
+	    }
+	}
 
 	pane.add(top);
 	pane.add(bottom);
