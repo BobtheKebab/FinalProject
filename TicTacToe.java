@@ -44,6 +44,13 @@ public class TicTacToe {
     JOptionPane.PLAIN_MESSAGE);
     }
 
+    public void tiedGame(){
+        JOptionPane.showMessageDialog(frame,
+            "Draw!",
+            "Tied Game",
+            JOptionPane.PLAIN_MESSAGE);
+    }
+
     // Separate JButtons from each other and determine winning factors
     // Have only written down the layout for a horizontal winning pattern. Also need to include a return that will tell us the winner WHEN we have three of kind
     private void determineWinner(){
@@ -118,6 +125,15 @@ public class TicTacToe {
         }
     }
 
+    public void tiedGame2(){
+        for (int row = 0; row < 3; row++){
+            for (int column = 0; column < 3; column++){
+                if (board[row][column] != " "){
+                    tiedGame();
+                }
+            }
+        }
+    }
 
 
 
