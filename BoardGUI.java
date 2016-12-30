@@ -6,8 +6,8 @@ import java.util.*;
 public class BoardGUI extends JFrame {
     
     private Container pane;
-    private JPanel top, bottom;
-    private JLabel player1, player2, wins1, wins2;
+    private JPanel top, bottom, bottomLeft, bottomRight;
+    private JLabel player1, player2, wins1, wins2, whosTurn;
     private JButton[][] board;
 
     public BoardGUI () {
@@ -23,14 +23,21 @@ public class BoardGUI extends JFrame {
 	player2 = new JLabel("Player 2", JLabel.CENTER);
 	wins1 = new JLabel("0 Wins", JLabel.CENTER);
 	wins2 = new JLabel("0 Wins", JLabel.CENTER);
+	whosTurn = new JLabel("<<<<<<<", JLabel.CENTER);
 
-	top = new JPanel(new GridLayout());
-	bottom = new JPanel(new GridLayout(2, 2));
+	top = new JPanel(new GridLayout(3, 3));
+	bottom = new JPanel(new GridLayout(1, 3, 50, 0));
+	bottomLeft = new JPanel(new GridLayout(2, 1));
+	bottomRight = new JPanel(new GridLayout(2, 1));
 
-	bottom.add(player1);
-	bottom.add(wins1);
-	bottom.add(player2);
-	bottom.add(wins2);
+	bottomLeft.add(player1);
+	bottomLeft.add(wins1);
+	bottomRight.add(player2);
+	bottomRight.add(wins2);
+
+	bottom.add(bottomLeft);
+	bottom.add(whosTurn);
+	bottom.add(bottomRight);
 
 	pane.add(top);
 	pane.add(bottom);
