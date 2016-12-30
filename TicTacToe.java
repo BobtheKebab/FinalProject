@@ -30,6 +30,20 @@ public class TicTacToe {
         else (player == "X";)
     }
 
+    public void xWinner(){
+        JOptionPane.showMessageDialog(frame,
+    "Player 1 Wins!",
+    "Winner",
+    JOptionPane.PLAIN_MESSAGE);
+    }
+
+    public void oWinner(){
+        JOptionPane.showMessageDialog(frame,
+    "Player 2 Wins!",
+    "Winner",
+    JOptionPane.PLAIN_MESSAGE);
+    }
+
     // Separate JButtons from each other and determine winning factors
     // Have only written down the layout for a horizontal winning pattern. Also need to include a return that will tell us the winner WHEN we have three of kind
     private void determineWinner(){
@@ -43,16 +57,65 @@ public class TicTacToe {
         Char eight = board[2][1].getText();
         Char nine = board[2][2].getText();
 
+        // Checks each row for X
         if (one == "X" && two == "X" && three == "X"){
-
+            xWinner();
         }
         if (four == "X" && five == "X" && six == "X"){
-            
+            xWinner();
         }
         if (seven == "X" && eight == "X" && nine == "X"){
-            
+            xWinner(); 
         }
 
+        // Checks each column for X
+        if (one == "X" && four == "X" && seven == "X"){
+            xWinner();
+        }
+        if (two == "X" && five == "X" && eight == "X"){
+            xWinner();
+        }
+        if (three == "X" && six == "X" && nine == "X"){
+            xWinner();
+        }
+
+        // Checks each diagonal for X
+        if (seven == "X" && five == "X" && three == "X"){
+            xWinner();
+        }
+        if (nine == "X" && five == "X" && one == "X"){
+            xWinner();
+        }
+
+        // Checks each row for O
+        if (one == "O" && two == "O" && three == "O"){
+            oWinner();
+        }
+        if (four == "O" && five == "O" && six == "O"){
+            oWinner();
+        }
+        if (seven == "O" && eight == "O" && nine == "O"){
+            oWinner(); 
+        }
+
+        // Checks each column for O
+        if (one == "O" && four == "O" && seven == "O"){
+            oWinner();
+        }
+        if (two == "O" && five == "O" && eight == "O"){
+            oWinner();
+        }
+        if (three == "O" && six == "O" && nine == "O"){
+            oWinner();
+        }
+
+        // Checks each diagonal for O
+        if (seven == "O" && five == "O" && three == "O"){
+            oWinner();
+        }
+        if (nine == "O" && five == "O" && one == "O"){
+            oWinner();
+        }
     }
 
 
