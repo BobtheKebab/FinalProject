@@ -25,9 +25,9 @@ public class TicTacToe {
 
     private void changePlayer (){
         if (player.equals ("X")){
-            player == "O";
+            player = "O";
         }
-        else (player == "X";)
+        else (player = "X");
     }
 
     public void xWinner(){
