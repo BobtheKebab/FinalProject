@@ -13,7 +13,7 @@ public class BoardGUI extends JFrame {
     public BoardGUI () {
 
         this.setTitle("Tic-Tac-Toe");
-	this.setSize(300, 300);
+	this.setSize(600, 625);
 	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 	pane = this.getContentPane();
@@ -44,6 +44,7 @@ public class BoardGUI extends JFrame {
 	    for (int col = 0; col < board[0].length; col++) {
 		JButton button = board[row][col];
 	        button = new JButton("");
+		button.setPreferredSize(new Dimension(175, 175));
 		button.setVisible(true);
 		//button.addActionListener(this);
 		top.add(button);
