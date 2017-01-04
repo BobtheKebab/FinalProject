@@ -5,7 +5,7 @@ import java.util.*;
 
 public class BoardGUI extends JFrame {
     
-    private Container pane;
+    public Container pane;
     private JPanel top, bottom, bottomLeft, bottomRight;
     private JLabel player1, player2, wins1, wins2, whosTurn;
     private JButton[][] board;
