@@ -3,9 +3,10 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 
+//Errors can be found starting in lines 33 and 57
 public class TicTacToe {
 
-    private char[][] data;
+    private String [][] data;
 
     /* This will be for the random grid. Will be implemented later
     public Board (int size) {
@@ -14,14 +15,14 @@ public class TicTacToe {
     */
 
     public BoardGUI Start () {
-    data = new char[3][3];
+    data = new String[3][3];
     BoardGUI board = new BoardGUI();
     return board;
     }
 
     // This will allow us to make each button alternate between X and O whenever we click on them. 
     // String X will be the starting object for now
-    private char player = "X";
+    private String player = "X";
 
     private void changePlayer (){
         if (player.equals ("X")){
@@ -29,7 +30,7 @@ public class TicTacToe {
         }
         else {player = "X";}
     }
-
+// Something is wrong with using frame even though it was researched online
     public void xWinner(){
         JOptionPane.showMessageDialog(frame,
     "Player 1 Wins!",
@@ -53,16 +54,17 @@ public class TicTacToe {
 
     // Separate JButtons from each other and determine winning factors
     // Have only written down the layout for a horizontal winning pattern. Also need to include a return that will tell us the winner WHEN we have three of kind
+    // Terminal says it cannot find symbol @ board. So is it a case of not creating a board fxn?
     private void determineWinner(){
-        Char one = board[0][0].getText();
-        Char two = board[0][1].getText();
-        Char three = board[0][2].getText();
-        Char four = board[1][0].getText();
-        Char five = board[1][1].getText();
-        Char six = board[1][2].getText();
-        Char seven = board[2][0].getText();
-        Char eight = board[2][1].getText();
-        Char nine = board[2][2].getText();
+        String one = board[0][0].getText();
+        String two = board[0][1].getText();
+        String three = board[0][2].getText();
+        String four = board[1][0].getText();
+        String five = board[1][1].getText();
+        String six = board[1][2].getText();
+        String seven = board[2][0].getText();
+        String eight = board[2][1].getText();
+        String nine = board[2][2].getText();
 
         // Checks each row for X
         if (one == "X" && two == "X" && three == "X"){
@@ -137,7 +139,7 @@ public class TicTacToe {
 
 
 
-    public void Run () {
+    public void Run() {
     board = Start();
     board.setVisisble(true);
     
