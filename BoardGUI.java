@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 
-public class BoardGUI extends JFrame {
+public class BoardGUI extends JFrame implements ActionListener {
     
     public Container pane;
     private JPanel top, bottom, bottomLeft, bottomRight;
@@ -40,13 +40,16 @@ public class BoardGUI extends JFrame {
 	bottom.add(bottomRight);
 	
 	board = new JButton[3][3];
+	int num = 0;
 	for (int row = 0; row < board.length; row++) {
 	    for (int col = 0; col < board[0].length; col++) {
 		JButton button = board[row][col];
 	        button = new JButton("");
 		button.setPreferredSize(new Dimension(175, 175));
 		button.setVisible(true);
-		//button.addActionListener(this);
+		button.addActionListener(this);
+		button.setActionCommand("" + num);
+		num++;
 		top.add(button);
 	    }
 	}
@@ -55,7 +58,8 @@ public class BoardGUI extends JFrame {
 	pane.add(bottom);
     }
 
-	
+    public void actionPerformed (ActionEvent e) {
+        for (int count = 0; 
 
 	
     public static void main (String[] args) {
