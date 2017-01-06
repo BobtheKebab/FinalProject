@@ -8,7 +8,7 @@ public class TicTacToe {
 
     private static BoardGUI gui;
     private String[][] board;
-
+                                
     /* This will be for the random grid. Will be implemented later
     public Board (int size) {
     data = new String[size][size];
@@ -127,7 +127,7 @@ public class TicTacToe {
             oWinner();
         }
         if (nine == "O" && five == "O" && one == "O"){
-            oWinner();
+            oWinner(); 
         }
     }
 
@@ -140,6 +140,14 @@ public class TicTacToe {
             }
         }
     }
+
+  
+   public void update(int num){
+	int row = num / (board.length);
+	int col = num - (board.length) * row; 
+	board[row][col] = player;
+	gui.board[row][col].setText(player);
+}
 
     public static void main (String[]args) {
 	TicTacToe game = new TicTacToe();
