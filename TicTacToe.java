@@ -147,7 +147,10 @@ public class TicTacToe {
 	int col = num - (board.length) * row; 
 	board[row][col] = player;
 	gui.board[row][col].setText(player);
+	changePlayer();
+	gui.pane.repaint();
 }
+
 
     public static void main (String[]args) {
 	TicTacToe game = new TicTacToe();
