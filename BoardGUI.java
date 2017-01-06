@@ -8,7 +8,7 @@ public class BoardGUI extends JFrame implements ActionListener {
     public Container pane;
     private JPanel top, bottom, bottomLeft, bottomRight;
     private JLabel player1, player2, wins1, wins2, whosTurn;
-    private JButton[][] board;
+    public JButton[][] board;
 
     public BoardGUI () {
 
@@ -59,9 +59,10 @@ public class BoardGUI extends JFrame implements ActionListener {
     }
 
     public void actionPerformed (ActionEvent e) {
-        for (int count = 0; 
+        String event = e.getActionCommand();
+	//TicTacToe.update(Integer.parseInt(event));
+    }
 
-	
     public static void main (String[] args) {
 
 	BoardGUI dank = new BoardGUI();
