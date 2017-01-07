@@ -7,7 +7,7 @@ import java.util.*;
 public class TicTacToe {
 
     private static BoardGUI gui;
-    private String[][] board;
+    private static String[][] board;
                                 
     /* This will be for the random grid. Will be implemented later
     public Board (int size) {
@@ -22,9 +22,9 @@ public class TicTacToe {
 
     // This will allow us to make each button alternate between X and O whenever we click on them. 
     // String X will be the starting object for now
-    private String player = "X";
+    private static String player = "X";
 
-    private void changePlayer (){
+    private static void changePlayer (){
         if (player.equals ("X")){
             player = "O";
         }
