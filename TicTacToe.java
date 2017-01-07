@@ -6,12 +6,12 @@ import java.util.*;
 //Errors can be found starting in lines 33 and 57
 public class TicTacToe {
 
-    private static BoardGUI gui;
-    private static String[][] board;
+    private BoardGUI gui;
+    private String[][] board;
                                 
     /* This will be for the random grid. Will be implemented later
     public Board (int size) {
-    data = new String[size][size];
+    board = new String[size][size];
     }
     */
 
@@ -22,9 +22,9 @@ public class TicTacToe {
 
     // This will allow us to make each button alternate between X and O whenever we click on them. 
     // String X will be the starting object for now
-    private static String player = "X";
+    private String player = "X";
 
-    private static void changePlayer (){
+    private void changePlayer (){
         if (player.equals ("X")){
             player = "O";
         }
@@ -142,19 +142,14 @@ public class TicTacToe {
     }
 
   
-   public static void update(int num){
+   public void update(int num){
 	
-	int row = num / 3; // (board.length);
-	int col = num - (3 * row); //- (board.length) * row; 
+	int row = num / (board.length);
+	int col = num - (board.length) * row; 
 	board[row][col] = player;
-
-	System.out.println("" + row + col);
-
-	/*
-	gui.board[row][col].setText(player);
+	gui.buttons[row][col].setText(player);
 	changePlayer();
 	gui.pane.repaint();
-	*/
 }
 
 
