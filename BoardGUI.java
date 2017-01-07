@@ -60,7 +60,9 @@ public class BoardGUI extends JFrame implements ActionListener {
 
     public void actionPerformed (ActionEvent e) {
         String event = e.getActionCommand();
-	TicTacToe.update(Integer.parseInt(event));
+	System.out.println(event);
+	buttons[0][0].setText(event);
+	//TicTacToe.update(Integer.parseInt(event));
     }
 
     public static void main (String[] args) {
