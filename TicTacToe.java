@@ -143,12 +143,18 @@ public class TicTacToe {
 
   
    public static void update(int num){
-	int row = num / (board.length);
-	int col = num - (board.length) * row; 
+	
+	int row = num / 3; // (board.length);
+	int col = num - (3 * row); //- (board.length) * row; 
 	board[row][col] = player;
+
+	System.out.println("" + row + col);
+
+	/*
 	gui.board[row][col].setText(player);
 	changePlayer();
 	gui.pane.repaint();
+	*/
 }
 
 

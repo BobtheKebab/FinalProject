@@ -8,7 +8,7 @@ public class BoardGUI extends JFrame implements ActionListener {
     public Container pane;
     private JPanel top, bottom, bottomLeft, bottomRight;
     private JLabel player1, player2, wins1, wins2, whosTurn;
-    public JButton[][] board;
+    public JButton[][] buttons;
 
     public BoardGUI () {
 
@@ -39,11 +39,11 @@ public class BoardGUI extends JFrame implements ActionListener {
 	bottom.add(whosTurn);
 	bottom.add(bottomRight);
 	
-	board = new JButton[3][3];
+	buttons = new JButton[3][3];
 	int num = 0;
-	for (int row = 0; row < board.length; row++) {
-	    for (int col = 0; col < board[0].length; col++) {
-		JButton button = board[row][col];
+	for (int row = 0; row < buttons.length; row++) {
+	    for (int col = 0; col < buttons[0].length; col++) {
+		JButton button = buttons[row][col];
 	        button = new JButton("");
 		button.setPreferredSize(new Dimension(175, 175));
 		button.setVisible(true);
