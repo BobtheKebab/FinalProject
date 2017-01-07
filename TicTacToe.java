@@ -142,7 +142,7 @@ public class TicTacToe {
     }
 
   
-   public void update(int num){
+   public static void update(int num){
 	int row = num / (board.length);
 	int col = num - (board.length) * row; 
 	board[row][col] = player;
