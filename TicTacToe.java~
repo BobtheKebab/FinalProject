@@ -151,7 +151,6 @@ public class TicTacToe {
 	gui.buttons[row][col].setText(player);
 	changePlayer();
 	//gui.pane.repaint();
-	gui.whosTurn.setText(">>>>>>>");
 }
 
 
