@@ -20,11 +20,12 @@ public class BoardGUI extends JFrame implements ActionListener {
 	pane = this.getContentPane();
 	pane.setLayout(new FlowLayout());
 
-	player1 = new JLabel("Player 1", JLabel.CENTER);
-	player2 = new JLabel("Player 2", JLabel.CENTER);
+	player1 = new JLabel("Player 1 (X)", JLabel.CENTER);
+	player2 = new JLabel("Player 2 (O)", JLabel.CENTER);
 	wins1 = new JLabel("0 Wins", JLabel.CENTER);
 	wins2 = new JLabel("0 Wins", JLabel.CENTER);
-	whosTurn = new JLabel("<<<<<<<", JLabel.CENTER);
+	whosTurn = new JLabel("<======", JLabel.CENTER);
+	whosTurn.setFont(new Font("Arial", Font.BOLD, 40));
 
 	top = new JPanel(new GridLayout(3, 3));
 	bottom = new JPanel(new GridLayout(1, 3, 50, 0));

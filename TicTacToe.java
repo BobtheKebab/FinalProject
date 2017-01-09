@@ -28,11 +28,11 @@ public class TicTacToe {
     private static void changePlayer (){
         if (player.equals ("X")){
             player = "O";
-	    gui.whosTurn.setText(">>>>>>>");
+	    gui.whosTurn.setText("======>");
         }
         else {
 	    player = "X";
-	    gui.whosTurn.setText("<<<<<<<");
+	    gui.whosTurn.setText("<======");
 	}
 	
     }
@@ -153,7 +153,10 @@ public class TicTacToe {
 	int row = num / (board.length);
 	int col = num - (board.length) * row; 
 	board[row][col] = player;
-	gui.buttons[row][col].setText(player);
+	JButton tempButton = gui.buttons[row][col];
+	tempButton.setText(player);
+	tempButton.setEnabled(false);
+	tempButton.setFont(new Font("Arial", Font.BOLD, 150));
 	changePlayer();
 	//gui.pane.repaint();
 	
