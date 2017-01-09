@@ -43,8 +43,8 @@ public class BoardGUI extends JFrame implements ActionListener {
 	int num = 0;
 	for (int row = 0; row < buttons.length; row++) {
 	    for (int col = 0; col < buttons[0].length; col++) {
-		JButton button = buttons[row][col];
-	        button = new JButton("");
+	        JButton button = new JButton("");
+		buttons[row][col] = button;
 		button.setPreferredSize(new Dimension(175, 175));
 		button.setVisible(true);
 		button.addActionListener(this);
@@ -61,6 +61,7 @@ public class BoardGUI extends JFrame implements ActionListener {
     public void actionPerformed (ActionEvent e) {
         String event = e.getActionCommand();
 	System.out.println(event);
+	//whosTurn.setText(event);
 	buttons[0][0].setText(event);
 	//TicTacToe.update(Integer.parseInt(event));
     }
