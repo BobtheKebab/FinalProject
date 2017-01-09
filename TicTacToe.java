@@ -28,8 +28,13 @@ public class TicTacToe {
     private static void changePlayer (){
         if (player.equals ("X")){
             player = "O";
+	    gui.whosTurn.setText(">>>>>>>");
         }
-        else {player = "X";}
+        else {
+	    player = "X";
+	    gui.whosTurn.setText("<<<<<<<");
+	}
+	
     }
 // Something is wrong with using frame even though it was researched online
     public void xWinner(){
@@ -151,7 +156,7 @@ public class TicTacToe {
 	gui.buttons[row][col].setText(player);
 	changePlayer();
 	//gui.pane.repaint();
-	gui.whosTurn.setText(">>>>>>>");
+	
 }
 
 
