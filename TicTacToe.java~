@@ -12,6 +12,7 @@ public class TicTacToe {
     /* This will be for the random grid. Will be implemented later
     public Board (int size) {
     board = new String[size][size];
+    moves = 0;
     }
     */
 
@@ -28,39 +29,60 @@ public class TicTacToe {
     private static void changePlayer (){
         if (player.equals ("X")){
             player = "O";
+	    gui.whosTurn.setText("======>");
         }
-        else {player = "X";}
+        else {
+	    player = "X";
+	    gui.whosTurn.setText("<======");
+	}
+	
     }
 // Something is wrong with using frame even though it was researched online
-    public void xWinner(){
+    public static void xWinner(){
 	Container frame = gui.pane;
         JOptionPane.showMessageDialog(frame,
     "Player 1 Wins!",
     "Winner",
     JOptionPane.PLAIN_MESSAGE);
+            resetGame();
     }
 
-    public void oWinner(){
+    public static void oWinner(){
 	Container frame = gui.pane;
         JOptionPane.showMessageDialog(frame,
     "Player 2 Wins!",
     "Winner",
     JOptionPane.PLAIN_MESSAGE);
+            resetGame();
     }
 
-    public void tiedGame(){
+    public static void tiedGame(){
 	Container frame = gui.pane;
         JOptionPane.showMessageDialog(frame,
             "Draw!",
             "Tied Game",
             JOptionPane.PLAIN_MESSAGE);
+            resetGame();
     }
+
+
+    public static void resetGame(){
+    	for (int row = 0; row < board.length; row++) {
+            for (int col = 0; col < board[0].length; col++) {
+		board[row][col] = "";
+                gui.buttons[row][col].setText("");
+	       // gui.buttons[row][col].setEnabled(true);
+	    }
+    	}
+	
+    }
+
 
     // Separate JButtons from each other and determine winning factors
     // Have only written down the layout for a horizontal winning pattern. Also need to include a return that will tell us the winner WHEN we have three of kind
     // Terminal says it cannot find symbol @ board. So is it a case of not creating a board fxn?
     // Every time a move is made, the data in board must be updated. This change is then pushed over to the GUI.
-    private void determineWinner(){
+    private static void determineWinner(){
         String one = board[0][0];
         String two = board[0][1];
         String three = board[0][2];
@@ -129,17 +151,22 @@ public class TicTacToe {
         }
         if (nine == "O" && five == "O" && one == "O"){
             oWinner(); 
-        }
+	}
+
+	if (isTiedGame()) tiedGame();
+
     }
 
-    public void tiedGame2(){
-        for (int row = 0; row < 3; row++){
-            for (int column = 0; column < 3; column++){
-                if (board[row][column] != ""){
-                    tiedGame();
+    public static boolean isTiedGame () {
+	int filled = 0;
+        for (int row = 0; row < board.length; row++) {
+            for (int col = 0; col < board[0].length; col++) {
+                if (!board[row][col].equals("")){
+                    filled++;
                 }
             }
         }
+	return (filled == 9);
     }
 
   
@@ -148,9 +175,14 @@ public class TicTacToe {
 	int row = num / (board.length);
 	int col = num - (board.length) * row; 
 	board[row][col] = player;
-	gui.buttons[row][col].setText(player);
+	JButton tempButton = gui.buttons[row][col];
+	tempButton.setText(player);
+	tempButton.setEnabled(false);
+	tempButton.setFont(new Font("Arial", Font.BOLD, 150));
 	changePlayer();
-	//gui.pane.repaint();
+	
+	determineWinner();
+	
 }
 
 
