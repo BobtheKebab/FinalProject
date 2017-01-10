@@ -12,6 +12,7 @@ public class TicTacToe {
     /* This will be for the random grid. Will be implemented later
     public Board (int size) {
     board = new String[size][size];
+    moves = 0;
     }
     */
 
@@ -53,7 +54,7 @@ public class TicTacToe {
     JOptionPane.PLAIN_MESSAGE);
     }
 
-    public void tiedGame(){
+    public static void tiedGame(){
 	Container frame = gui.pane;
         JOptionPane.showMessageDialog(frame,
             "Draw!",
@@ -134,17 +135,22 @@ public class TicTacToe {
         }
         if (nine == "O" && five == "O" && one == "O"){
             oWinner(); 
-        }
+	}
+
+	if (isTiedGame()) tiedGame();
+
     }
 
-    public void tiedGame2(){
-        for (int row = 0; row < 3; row++){
-            for (int column = 0; column < 3; column++){
-                if (board[row][column] != ""){
-                    tiedGame();
+    public static boolean isTiedGame () {
+	int filled = 0;
+        for (int row = 0; row < board.length; row++) {
+            for (int col = 0; col < board[0].length; col++) {
+                if (!board[row][col].equals("")){
+                    filled++;
                 }
             }
         }
+	return (filled == 9);
     }
 
   
@@ -159,7 +165,6 @@ public class TicTacToe {
 	tempButton.setFont(new Font("Arial", Font.BOLD, 150));
 	changePlayer();
 	
-
 	determineWinner();
 	
 }
