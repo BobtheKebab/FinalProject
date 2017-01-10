@@ -67,13 +67,16 @@ public class TicTacToe {
 
 
     public static void resetGame(){
-    for (int row = 0; row < board.length; row++) {
-        for (int col = 0; col < board[0].length; col++) {
-            gui.buttons[row][col].setText(null);
-            
-    
-}
-}}
+    	for (int row = 0; row < board.length; row++) {
+            for (int col = 0; col < board[0].length; col++) {
+		board[row][col] = "";
+                gui.buttons[row][col].setText("");
+	        gui.buttons[row][col].setEnabled(true);
+	    }
+    	}
+	
+    }
+
 
     // Separate JButtons from each other and determine winning factors
     // Have only written down the layout for a horizontal winning pattern. Also need to include a return that will tell us the winner WHEN we have three of kind
