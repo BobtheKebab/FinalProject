@@ -44,8 +44,7 @@ public class TicTacToe {
     "Player 1 Wins!",
     "Winner",
     JOptionPane.PLAIN_MESSAGE);
-           if (JOptionPane.OK_OPTION == 0){
-            resetGame();}
+            resetGame();
     }
 
     public static void oWinner(){
@@ -54,8 +53,7 @@ public class TicTacToe {
     "Player 2 Wins!",
     "Winner",
     JOptionPane.PLAIN_MESSAGE);
-            if (JOptionPane.OK_OPTION == 0){
-            resetGame();}
+            resetGame();
     }
 
     public static void tiedGame(){
@@ -64,17 +62,14 @@ public class TicTacToe {
             "Draw!",
             "Tied Game",
             JOptionPane.PLAIN_MESSAGE);
-        if (JOptionPane.OK_OPTION == 0){
-            resetGame();}
+            resetGame();
     }
 
 
     public static void resetGame(){
-        
-        Container frame = gui.pane;
     for (int row = 0; row < board.length; row++) {
         for (int col = 0; col < board[0].length; col++) {
-            gui.buttons[row][col].setText("");
+            gui.buttons[row][col].setText(null);
             
     
 }
