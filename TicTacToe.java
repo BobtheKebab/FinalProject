@@ -37,7 +37,7 @@ public class TicTacToe {
 	
     }
 // Something is wrong with using frame even though it was researched online
-    public void xWinner(){
+    public static void xWinner(){
 	Container frame = gui.pane;
         JOptionPane.showMessageDialog(frame,
     "Player 1 Wins!",
@@ -45,7 +45,7 @@ public class TicTacToe {
     JOptionPane.PLAIN_MESSAGE);
     }
 
-    public void oWinner(){
+    public static void oWinner(){
 	Container frame = gui.pane;
         JOptionPane.showMessageDialog(frame,
     "Player 2 Wins!",
@@ -65,7 +65,7 @@ public class TicTacToe {
     // Have only written down the layout for a horizontal winning pattern. Also need to include a return that will tell us the winner WHEN we have three of kind
     // Terminal says it cannot find symbol @ board. So is it a case of not creating a board fxn?
     // Every time a move is made, the data in board must be updated. This change is then pushed over to the GUI.
-    private void determineWinner(){
+    private static void determineWinner(){
         String one = board[0][0];
         String two = board[0][1];
         String three = board[0][2];
@@ -158,7 +158,9 @@ public class TicTacToe {
 	tempButton.setEnabled(false);
 	tempButton.setFont(new Font("Arial", Font.BOLD, 150));
 	changePlayer();
-	//gui.pane.repaint();
+	
+
+	determineWinner();
 	
 }
 
