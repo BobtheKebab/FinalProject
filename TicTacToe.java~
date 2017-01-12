@@ -71,7 +71,7 @@ public class TicTacToe {
             for (int col = 0; col < board[0].length; col++) {
 		board[row][col] = "";
                 gui.buttons[row][col].setText("");
-	       // gui.buttons[row][col].setEnabled(true);
+	        gui.buttons[row][col].setEnabled(true);
 	    }
     	}
 	

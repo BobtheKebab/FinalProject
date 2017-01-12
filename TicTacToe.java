@@ -76,7 +76,10 @@ public class TicTacToe {
     	}
 	
     }
-
+   
+	public static void toResize(){;}
+	
+	private static void gameAI(){;}
 
     // Separate JButtons from each other and determine winning factors
     // Have only written down the layout for a horizontal winning pattern. Also need to include a return that will tell us the winner WHEN we have three of kind
