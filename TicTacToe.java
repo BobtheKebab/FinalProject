@@ -160,9 +160,9 @@ public class TicTacToe {
 
     }
 
-    // This method is based off of WordSearch; This method is taken from words.add
+    // This method is based off of WordSearch;
     /*
-    private boolean winString? (String word, int row, int col, int deltaRow, int deltaCol) {
+    private static boolean winString? (String word, int row, int col, int deltaRow, int deltaCol) {
 
 	if (board[row][col].equals("")) {
 	    return false;
@@ -185,6 +185,11 @@ public class TicTacToe {
 	
 	return true;
     }
+
+    private static void anyWon? () {
+        for (int row = 0; row < board.length; row++) {
+	    for (int col 0; col < board[0].length; col++) {
+	        if (winString?("XXX", row, col, 
     */
 
     public static boolean isTiedGame () {
