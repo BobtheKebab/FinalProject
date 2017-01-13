@@ -160,6 +160,33 @@ public class TicTacToe {
 
     }
 
+    // This method is based off of WordSearch;
+    /*
+    private boolean winString? (String word, int row, int col, int deltaRow, int deltaCol) {
+
+	if (board[row][col].equals("")) {
+	    return false;
+	}
+
+	// Checks if word can fit
+	int lastCol = col + ( deltaCol * 2 );
+	if ( (lastCol > board[row].length - 1) || (lastCol < 0) ) return false;
+	
+	int lastRow = row + ( deltaRow * 2 );
+	if ( (lastRow > board.length - 1) || (lastRow < 0) ) return false;
+
+	
+	// Checks if theres conflicting letters
+	for (int index = 0, num = row, count = col; index < word.length(); index ++, num += deltaRow, count += deltaCol) {
+	    if ( !board[num][count].equals("" + word.charAt(index) ) ) {
+		return false;
+	    }
+	}
+	
+	return true;
+    }
+    */
+
     public static boolean isTiedGame () {
 	int filled = 0;
         for (int row = 0; row < board.length; row++) {
