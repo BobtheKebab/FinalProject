@@ -160,7 +160,7 @@ public class TicTacToe {
 
     }
 
-    // This method is based off of WordSearch;
+    // This method is based off of WordSearch; This method is taken from words.add
     /*
     private boolean winString? (String word, int row, int col, int deltaRow, int deltaCol) {
 
