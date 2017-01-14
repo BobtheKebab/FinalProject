@@ -193,10 +193,22 @@ public class TicTacToe {
 	    for (String col : row) {
 	        horizString += col;
 	    }
-	    if ( (horizString.indexOf(winString)) == -1 ) {
+	    if ( (horizString.indexOf(winString)) != -1 ) {
 	        return true;
 	    }
 	}
+
+	for (int col = 0; row < board[0].length; col++) {
+	    String vertString = "";
+	    for (int row = 0; col < board.length; row++) {
+	        vertSting += board[row][col];
+	    }
+	    if ( (vertString.indexOf(winString)) != -1) {
+	        return true
+	    }
+	}
+
+    }
 	    
     */
 
