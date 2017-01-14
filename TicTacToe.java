@@ -186,10 +186,18 @@ public class TicTacToe {
 	return true;
     }
 
-    private static void anyWon? () {
-        for (int row = 0; row < board.length; row++) {
-	    for (int col 0; col < board[0].length; col++) {
-	        if (winString?("XXX", row, col, 
+    private static void anyWon? (string winString) {
+
+        for (String[] row : board) {
+	    String horizString = "";
+	    for (String col : row) {
+	        horizString += col;
+	    }
+	    if ( (horizString.indexOf(winString)) == -1 ) {
+	        return true;
+	    }
+	}
+	    
     */
 
     public static boolean isTiedGame () {
