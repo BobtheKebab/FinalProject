@@ -187,8 +187,8 @@ public class TicTacToe {
     }
     */
 
-    private static void anyWon (String winString) {
-        row = new String[size];
+    private static boolean anyWon (String winString) {
+        
         for (String[] row : board) {
 	    String horizString = "";
 	    for (String col : row) {
@@ -199,9 +199,9 @@ public class TicTacToe {
 	    }
 	}
 
-	for (int col = 0; row < board[0].length; col++) {
+	for (int col = 0; col < board[0].length; col++) {
 	    String vertString = "";
-	    for (int row = 0; col < board.length; row++) {
+	    for (int row = 0; row < board.length; row++) {
 	        vertString += board[row][col];
 	    }
 	    if ( (vertString.indexOf(winString)) != -1) {
@@ -209,6 +209,8 @@ public class TicTacToe {
 	    }
 	}
 
+	return false;
+	
     }
 	    
     public static boolean isTiedGame () {
