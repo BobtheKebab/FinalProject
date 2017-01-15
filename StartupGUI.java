@@ -6,7 +6,7 @@ import java.util.*;
 public class StartupGUI extends JFrame {
 
     private Container pane;
-    private JPanel top, mid, bot;
+    private JPanel top, topRight, mid, bot;
     private JLabel title, playerNames, gameMode, size;
     private JButton start;
     private JTextField playerX, playerO;
@@ -15,47 +15,63 @@ public class StartupGUI extends JFrame {
     public StartupGUI () {
 
 	this.setTitle("Ultimate Tic-Tac-Toe");
-	this.setSize(400, 400);
+	this.setSize(600, 600);
 	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 	pane = this.getContentPane();
-	pane.setLayout(new FlowLayout());
+	pane.setLayout(new GridLayout(5, 1));
 
 	title = new JLabel("Ultimate Tic-Tac-Toe", JLabel.CENTER);
-	title.setFont(new Font("Arial", Font.BOLD, 60));
+	title.setFont(new Font("Arial", Font.BOLD, 40));
 	playerNames = new JLabel("Player Names", JLabel.CENTER);
 	gameMode = new JLabel("Game Mode", JLabel.CENTER);
 	size = new JLabel("Size", JLabel.CENTER);
 
 	JTextField playerX = new JTextField("Player 1");
+	playerX.setPreferredSize(new Dimension (100, 50));
 	JTextField playerO = new JTextField("Player 2");
+	playerO.setPreferredSize(new Dimension (100, 50));
 
 	String[] gameModeAry = { "Standard" };
 	selectGameMode = new JComboBox(gameModeAry);
-	String[] sizeAry = { "3 X 3" };
+	selectGameMode.setPreferredSize(new Dimension (150, 50));
+	String[] sizeAry = { "3 X 3", "4 X 4", "5 X 5", "6 X 6", "7 X 7", "8 X 8", "9 X 9" };
 	selectSize = new JComboBox(sizeAry);
+        selectSize.setPreferredSize(new Dimension (150, 50));
+
 
 	start = new JButton("Start");
+	start.setPreferredSize(new Dimension(100, 50));
 
-	top = new JPanel(new GridLayout(1, 3));
+	top = new JPanel(new GridLayout(1, 2));
+	topRight = new JPanel(new GridLayout(1, 2));
 	mid = new JPanel(new GridLayout(1, 2));
 	bot = new JPanel(new GridLayout(1, 2));
+	JPanel startPanel = new JPanel(), panel0 = new JPanel(), panel1 = new JPanel(), panel2 = new JPanel(), panel3 = new JPanel();
+        
 
+	panel0.add(playerX);
+	panel1.add(playerO);
+	topRight.add(panel0);
+	topRight.add(panel1);
 	top.add(playerNames);
-	top.add(playerX);
-	top.add(playerO);
+	top.add(topRight);
 
 	mid.add(gameMode);
-	mid.add(selectGameMode);
+	panel2.add(selectGameMode);
+	mid.add(panel2);
 
 	bot.add(size);
-	bot.add(selectSize);
+	panel3.add(selectSize);
+	bot.add(panel3);
+
+	startPanel.add(start);
 
 	pane.add(title);
 	pane.add(top);
 	pane.add(mid);
 	pane.add(bot);
-	pane.add(start);
+	pane.add(startPanel);
 
     }
 
