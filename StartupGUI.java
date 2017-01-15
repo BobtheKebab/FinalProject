@@ -34,7 +34,8 @@ public class StartupGUI extends JFrame {
 	selectGameMode = new JComboBox(gameModeAry);
 	String[] sizeAry = { "3 X 3" };
 	selectSize = new JComboBox(sizeAry);
-	
+
+	start = new JButton("Start");
 
 	top = new JPanel(new GridLayout(1, 3));
 	mid = new JPanel(new GridLayout(1, 2));
