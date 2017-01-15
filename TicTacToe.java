@@ -189,7 +189,7 @@ public class TicTacToe {
 
     private static void anyWon (String winString) {
         row = new String[size];
-        for (row : board) {
+        for (String[] row : board) {
 	    String horizString = "";
 	    for (String col : row) {
 	        horizString += col;
