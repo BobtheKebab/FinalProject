@@ -215,8 +215,17 @@ public class TicTacToe {
 	    }
 	}
 
-	return false;
+    for (int row = 0; row <= board[0].length - 1; row++) {
+        String diagString = "";
+        for (int col = 0, temp = row; col <= board.length -1; col++, temp++){
+            diagString += board[row][col];
+        }
+        if ((diagString.indexOf(winString)) != -1) {
+            return true;
+        }
+    }
 	
+    return false;
     }
 	    
     public static boolean isTiedGame () {
