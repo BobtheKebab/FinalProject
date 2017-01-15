@@ -86,6 +86,8 @@ public class TicTacToe {
     // Terminal says it cannot find symbol @ board. So is it a case of not creating a board fxn?
     // Every time a move is made, the data in board must be updated. This change is then pushed over to the GUI.
     private static void determineWinner(){
+
+	/*
         String one = board[0][0];
         String two = board[0][1];
         String three = board[0][2];
@@ -155,7 +157,11 @@ public class TicTacToe {
         if (nine == "O" && five == "O" && one == "O"){
             oWinner(); 
 	}
+	*/
 
+	
+	if (anyWon("XXX")) xWinner();
+	if (anyWon("OOO")) oWinner();
 	if (isTiedGame()) tiedGame();
 
     }
