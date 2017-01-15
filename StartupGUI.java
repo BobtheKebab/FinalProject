@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 
-public class StartupGUI extends JFrame {
+public class StartupGUI extends JFrame implements ActionListener {
 
     private Container pane;
     private JPanel top, topRight, mid, bot;
@@ -42,11 +42,14 @@ public class StartupGUI extends JFrame {
 
 	start = new JButton("Start");
 	start.setPreferredSize(new Dimension(100, 50));
+	start.addActionListener(this);
+	start.setActionCommand("start");
 
 	top = new JPanel(new GridLayout(1, 2));
 	topRight = new JPanel(new GridLayout(1, 2));
 	mid = new JPanel(new GridLayout(1, 2));
 	bot = new JPanel(new GridLayout(1, 2));
+	// This is a really ugly way to initialize, but using a loop didnt work :(
 	JPanel startPanel = new JPanel(), panel0 = new JPanel(), panel1 = new JPanel(), panel2 = new JPanel(), panel3 = new JPanel();
         
 
@@ -73,6 +76,10 @@ public class StartupGUI extends JFrame {
 	pane.add(bot);
 	pane.add(startPanel);
 
+    }
+
+    public void actionPerformed (ActionEvent e) {
+	//TicTacToe game = new TicTacToe( playerX.getText(), playerO.getText(), Integer.parseInt( "" + (selectSize.getText()).charAt(0) ) );
     }
 
     public static void main (String[] args) {
