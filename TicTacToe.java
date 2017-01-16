@@ -237,6 +237,23 @@ public class TicTacToe {
         }
     }
 
+    for (int row = 0; row < board.length; row++){
+        String diagString2 = "";
+        diagString2 += board[row][row];
+        if ((diagString2.indexOf(winString)) != -1){
+            return true; 
+        }
+    }
+
+/*
+    for(int y = 0; y < board.length; y++){
+        String diagString = "";
+        for (int x = 0; x < board.length; x++){
+
+            }
+        }
+    }
+
     for (int k = 0; k <= (board.length - 1); k++){
         String diagString2 = "";
         int yMin = Math.max(0, k - board.length + 1);
@@ -249,7 +266,7 @@ public class TicTacToe {
             return true;
         }
     }
-
+*/
     return false;
     }
 	    
