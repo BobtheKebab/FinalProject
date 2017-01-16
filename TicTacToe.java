@@ -214,7 +214,7 @@ public class TicTacToe {
 	        return true;
 	    }
 	}
-
+/*
     for (int row = 0; row < (board.length); row++) {
         String diagString = "";
         for (int col = 0; col <= row; col++){
@@ -236,14 +236,23 @@ public class TicTacToe {
             return true;
         }
     }
+    */
     
-    String diagString2 = "";
+    String diagString = "";
     for (int row = 0; row < board.length; row++){
-        diagString2 += board[row][row];
+        diagString += board[row][row];
     }
-    if ((diagString2.indexOf(winString)) != -1){
+    if ((diagString.indexOf(winString)) != -1){
             return true; 
     }
+
+    String diagString1 = "";
+    for (int row = 0, col = board.length - 1; row < board.length; row++, col--){
+            diagString1 += board[row][col];
+        }
+        if ((diagString1.indexOf(winString)) != -1){
+            return true;
+        }
 
 /*
     for(int y = 0; y < board.length; y++){
