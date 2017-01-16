@@ -236,13 +236,13 @@ public class TicTacToe {
             return true;
         }
     }
-
+    
+    String diagString2 = "";
     for (int row = 0; row < board.length; row++){
-        String diagString2 = "";
         diagString2 += board[row][row];
-        if ((diagString2.indexOf(winString)) != -1){
+    }
+    if ((diagString2.indexOf(winString)) != -1){
             return true; 
-        }
     }
 
 /*
