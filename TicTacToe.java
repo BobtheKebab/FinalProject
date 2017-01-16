@@ -307,6 +307,8 @@ public class TicTacToe {
 	
 }
 
+    public static void aiupdate(){;}
+
 
     public static void main (String[]args) {
 	TicTacToe game = new TicTacToe();
