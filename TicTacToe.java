@@ -16,9 +16,9 @@ public class TicTacToe {
     }
     */
 
-    public TicTacToe () {
-	gui = new BoardGUI();
-	board = new String[3][3];
+    public TicTacToe (int size, String p1, String p2) {
+	gui = new BoardGUI(size, p1, p2);
+	board = new String[size][size];
     }
 
 
@@ -300,7 +300,7 @@ public class TicTacToe {
 	JButton tempButton = gui.buttons[row][col];
 	tempButton.setText(player);
 	tempButton.setEnabled(false);
-	tempButton.setFont(new Font("Arial", Font.BOLD, 150));
+	tempButton.setFont(new Font("Arial", Font.BOLD, 450 / board.length));
 	changePlayer();
 	
 	determineWinner();
@@ -311,7 +311,7 @@ public class TicTacToe {
 
 
     public static void main (String[]args) {
-	TicTacToe game = new TicTacToe();
+	TicTacToe game = new TicTacToe(10, "DANK", "MEMES");
         game.gui.setVisible(true);
     
     }
