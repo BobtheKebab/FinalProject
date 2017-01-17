@@ -335,6 +335,9 @@ public class TicTacToe {
 
 
     public static void main (String[]args) {
+    if (Integer.parseInt(args[0]) < 3) {
+        throw new UnsupportedOperationException("Error found");
+    }
 	TicTacToe game = new TicTacToe(10, "DANK", "MEMES", false);
         game.gui.setVisible(true);
     
