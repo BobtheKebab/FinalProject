@@ -299,7 +299,7 @@ public class TicTacToe {
                 }
             }
         }
-	return (filled == 9);
+	return (filled == board.length * board.length);
     }
 
   
