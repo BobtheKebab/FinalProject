@@ -79,10 +79,13 @@ public class StartupGUI extends JFrame implements ActionListener {
     }
 
     public void actionPerformed (ActionEvent e) {
-	int size = Integer.parseInt( "" +  ((String) selectSize.getSelectedItem()).charAt(0) );
-	System.out.println( "" + size + (String) playerX.getText());
-	//TicTacToe game = new TicTacToe( size, playerX.getText(), playerO.getText() );
-	//game.gui.setVisible(true);
+	String event = e.getActionCommand();
+	if (event.equals("start")) {
+	    int size = Integer.parseInt( "" +  ((String) selectSize.getSelectedItem()).charAt(0) );
+	    System.out.println( "" + size + playerX.getText());
+	    //TicTacToe game = new TicTacToe( size, playerX.getText(), playerO.getText(), false );
+	    //game.gui.setVisible(true);
+	}
     }
 
     public static void main (String[] args) {

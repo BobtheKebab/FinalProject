@@ -334,11 +334,13 @@ public class TicTacToe {
         ;}
 
 
-    public static void main (String[]args) {
-    if (Integer.parseInt(args[0]) < 3) {
-        throw new UnsupportedOperationException("Error found");
-    }
-	TicTacToe game = new TicTacToe(10, "DANK", "MEMES", false);
+    public static void main (String[] args) {
+	
+	int size = Integer.parseInt(args[0]);
+	if (size < 3) {
+	    throw new UnsupportedOperationException("Given size is too low");
+	}
+	TicTacToe game = new TicTacToe(size, args[1], args[2], false);
         game.gui.setVisible(true);
     
     }
