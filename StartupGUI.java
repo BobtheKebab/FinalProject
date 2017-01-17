@@ -80,6 +80,7 @@ public class StartupGUI extends JFrame implements ActionListener {
 
     public void actionPerformed (ActionEvent e) {
 	int size = Integer.parseInt( "" +  ((String) selectSize.getSelectedItem()).charAt(0) );
+	// I just wanna shoutout my man Khinshan Khan. He helped us debug a gamebreaking issue with the following 2 lines so please spread some of those good vibes to him :)
 	String player1 = playerX.getText();
 	String player2 = playerO.getText();
 	TicTacToe game = new TicTacToe( size, player1, player2, false );
