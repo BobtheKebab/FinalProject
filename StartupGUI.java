@@ -27,9 +27,9 @@ public class StartupGUI extends JFrame implements ActionListener {
 	gameMode = new JLabel("Game Mode", JLabel.CENTER);
 	size = new JLabel("Size", JLabel.CENTER);
 
-	JTextField playerX = new JTextField("Player 1");
+	playerX = new JTextField("Player 1");
 	playerX.setPreferredSize(new Dimension (100, 50));
-	JTextField playerO = new JTextField("Player 2");
+	playerO = new JTextField("Player 2");
 	playerO.setPreferredSize(new Dimension (100, 50));
 
 	String[] gameModeAry = { "Standard" };
@@ -80,9 +80,9 @@ public class StartupGUI extends JFrame implements ActionListener {
 
     public void actionPerformed (ActionEvent e) {
 	int size = Integer.parseInt( "" +  ((String) selectSize.getSelectedItem()).charAt(0) );
-	//String player1 = playerX.getText();
-	//System.out.println( "" + size + "player1" );
-	TicTacToe game = new TicTacToe( size, "Player 1", "Player 2", false );
+	String player1 = playerX.getText();
+	String player2 = playerO.getText();
+	TicTacToe game = new TicTacToe( size, player1, player2, false );
 	game.gui.setVisible(true);
     }
 
