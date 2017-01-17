@@ -7,7 +7,7 @@ public class BoardGUI extends JFrame implements ActionListener {
     
     public static Container pane;
     private JPanel top, bottom, bottomLeft, bottomRight;
-    private JLabel player1, player2, wins1, wins2;
+    public JLabel player1, player2, wins1, wins2;
     public static JLabel whosTurn;
     public static JButton[][] buttons;
 

@@ -9,6 +9,7 @@ public class TicTacToe {
     private static BoardGUI gui;
     private static String[][] board;
     private static boolean versusAI;
+    private static int winsX, winsO;
                                 
     /* This will be for the random grid. Will be implemented later
     public Board (int size) {
@@ -41,18 +42,14 @@ public class TicTacToe {
 // Something is wrong with using frame even though it was researched online
     public static void xWinner(){
 	Container frame = gui.pane;
-        JOptionPane.showMessageDialog(frame,
-    "Player 1 Wins!",
-    "Winner",
+        JOptionPane.showMessageDialog(frame, gui.player1.getText() + " Wins!", "Winner",
     JOptionPane.PLAIN_MESSAGE);
             resetGame();
     }
 
     public static void oWinner(){
 	Container frame = gui.pane;
-        JOptionPane.showMessageDialog(frame,
-    "Player 2 Wins!",
-    "Winner",
+        JOptionPane.showMessageDialog(frame, gui.player2.getText() + " Wins!", "Winner",
     JOptionPane.PLAIN_MESSAGE);
             resetGame();
     }
@@ -181,8 +178,18 @@ public class TicTacToe {
 	*/
 
 	
-	if (anyWon("XXX")) xWinner();
-	if (anyWon("OOO")) oWinner();
+	if (anyWon("XXX")) {
+	    winsX++;
+	    gui.wins1.setText("" + winsX);
+	    xWinner();
+	}
+	
+	if (anyWon("OOO")) {
+	    winsO++;
+	    gui.wins2.setText("" + winsO);
+	    oWinner();
+	}
+	
 	if (isTiedGame()) tiedGame();
 
     }
