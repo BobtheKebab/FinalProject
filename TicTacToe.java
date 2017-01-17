@@ -72,14 +72,25 @@ public class TicTacToe {
 		board[row][col] = "";
                 gui.buttons[row][col].setText("");
 	        gui.buttons[row][col].setEnabled(true);
+            player = "X";
+            gui.whosTurn.setText("<======");
 	    }
     	}
 	
     }
-   
-	public static void toResize(){;}
 	
-	private static void gameAI(){;}
+	private static void gameAI(){
+        int random = 0;
+        int random1 = 0;
+        boolean mademove = false;
+        while (!mademove){
+            random = (int) (Math.random() * board.length);
+            random1 = (int) (Math.random() * board.length);
+            if (board[random][random1] != "X" && board[random][random1] != "O"){
+                board[random][random1] = "O";
+            }
+        }
+    }
 
     // Separate JButtons from each other and determine winning factors
     // Have only written down the layout for a horizontal winning pattern. Also need to include a return that will tell us the winner WHEN we have three of kind
