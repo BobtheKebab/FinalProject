@@ -81,15 +81,26 @@ public class TicTacToe {
     }
 	
 	private static void gameAI(){
-        int random = 0;
-        int random1 = 0;
-            random = (int) (Math.random() * board.length);
-            random1 = (int) (Math.random() * board.length);
-            if (board[random][random1] != "X" && board[random][random1] != "O"){
-                board[random][random1] = "O";
-                changePlayer();
-            }
-        }
+	    int random = 0;
+	    int random1 = 0;
+	    boolean moveDone = false;
+	    System.out.println(moveDone);
+	    
+	    while (!moveDone) {
+		random = (int) (Math.random() * board.length);
+		random1 = (int) (Math.random() * board.length);
+		if ( board[random][random1].equals("") ) {
+		    moveDone = true;
+		    board[random][random1] = player;
+		    JButton tempButton = gui.buttons[random][random1];
+		    tempButton.setText(player);
+		    tempButton.setEnabled(false);
+		    tempButton.setFont(new Font("Arial", Font.BOLD, 450 / board.length));
+		}
+	    }
+	    changePlayer();
+	    
+	}
 
     // Separate JButtons from each other and determine winning factors
     // Have only written down the layout for a horizontal winning pattern. Also need to include a return that will tell us the winner WHEN we have three of kind
@@ -312,7 +323,7 @@ public class TicTacToe {
 	tempButton.setEnabled(false);
 	tempButton.setFont(new Font("Arial", Font.BOLD, 450 / board.length));
 	changePlayer();
-	if(versusAI){
+	if (versusAI) {
 	    gameAI();
 	}
 	determineWinner();
@@ -324,7 +335,7 @@ public class TicTacToe {
 
 
     public static void main (String[]args) {
-	TicTacToe game = new TicTacToe(10, "DANK", "MEMES", true);
+	TicTacToe game = new TicTacToe(10, "DANK", "MEMES", false);
         game.gui.setVisible(true);
     
     }
