@@ -13,7 +13,7 @@ public class BoardGUI extends JFrame implements ActionListener {
 
     public BoardGUI (int size, String p1, String p2) {
 
-        this.setTitle("Tic-Tac-Toe");
+        this.setTitle("Ultimate Tic-Tac-Toe");
 	this.setSize(800, 825);
 	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 

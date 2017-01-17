@@ -6,7 +6,7 @@ import java.util.*;
 //Errors can be found starting in lines 33 and 57
 public class TicTacToe {
 
-    private static BoardGUI gui;
+    public static BoardGUI gui;
     private static String[][] board;
     private static boolean versusAI;
     private static int winsX, winsO;
