@@ -8,6 +8,7 @@ public class TicTacToe {
 
     private static BoardGUI gui;
     private static String[][] board;
+    private static boolean versusAI;
                                 
     /* This will be for the random grid. Will be implemented later
     public Board (int size) {
@@ -16,9 +17,10 @@ public class TicTacToe {
     }
     */
 
-    public TicTacToe (int size, String p1, String p2) {
+    public TicTacToe (int size, String p1, String p2, boolean againstAI) {
 	gui = new BoardGUI(size, p1, p2);
 	board = new String[size][size];
+    versusAI = againstAI;
     }
 
 
@@ -82,15 +84,13 @@ public class TicTacToe {
 	private static void gameAI(){
         int random = 0;
         int random1 = 0;
-        boolean mademove = false;
-        while (!mademove){
             random = (int) (Math.random() * board.length);
             random1 = (int) (Math.random() * board.length);
             if (board[random][random1] != "X" && board[random][random1] != "O"){
                 board[random][random1] = "O";
+                changePlayer();
             }
         }
-    }
 
     // Separate JButtons from each other and determine winning factors
     // Have only written down the layout for a horizontal winning pattern. Also need to include a return that will tell us the winner WHEN we have three of kind
@@ -313,16 +313,19 @@ public class TicTacToe {
 	tempButton.setEnabled(false);
 	tempButton.setFont(new Font("Arial", Font.BOLD, 450 / board.length));
 	changePlayer();
-	
+	if(versusAI){
+        gameAI();
+    }
 	determineWinner();
 	
 }
 
-    public static void aiupdate(){;}
+    public static void aiupdate(){
+        ;}
 
 
     public static void main (String[]args) {
-	TicTacToe game = new TicTacToe(10, "DANK", "MEMES");
+	TicTacToe game = new TicTacToe(10, "DANK", "MEMES", true);
         game.gui.setVisible(true);
     
     }
