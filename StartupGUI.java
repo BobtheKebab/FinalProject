@@ -35,7 +35,7 @@ public class StartupGUI extends JFrame implements ActionListener {
 	String[] gameModeAry = { "Standard" };
 	selectGameMode = new JComboBox(gameModeAry);
 	selectGameMode.setPreferredSize(new Dimension (150, 50));
-	String[] sizeAry = { "3 X 3", "4 X 4", "5 X 5", "6 X 6", "7 X 7", "8 X 8", "9 X 9" };
+	String[] sizeAry = { "3 X 3", "4 X 4", "5 X 5", "6 X 6", "7 X 7", "8 X 8", "9 X 9", "10 X 10" };
 	selectSize = new JComboBox(sizeAry);
         selectSize.setPreferredSize(new Dimension (150, 50));
 
@@ -79,13 +79,16 @@ public class StartupGUI extends JFrame implements ActionListener {
     }
 
     public void actionPerformed (ActionEvent e) {
-	//TicTacToe game = new TicTacToe( playerX.getText(), playerO.getText(), Integer.parseInt( "" + (selectSize.getText()).charAt(0) ) );
+	int size = Integer.parseInt( "" +  ((String) selectSize.getSelectedItem()).charAt(0) );
+	System.out.println( "" + size + (String) playerX.getText());
+	//TicTacToe game = new TicTacToe( size, playerX.getText(), playerO.getText() );
+	//game.gui.setVisible(true);
     }
 
     public static void main (String[] args) {
 
-	StartupGUI dank = new StartupGUI();
-	dank.setVisible(true);
+	StartupGUI start  = new StartupGUI();
+	start.setVisible(true);
 
     }
 

@@ -19,6 +19,7 @@ public class TicTacToe {
     public TicTacToe (int size, String p1, String p2) {
 	gui = new BoardGUI(size, p1, p2);
 	board = new String[size][size];
+	gui.setVisible(true);
     }
 
 
